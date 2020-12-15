@@ -1,12 +1,25 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <Header></Header>
+    <div class="container">
+      <router-view />
     </div>
-    <router-view />
+    <Footer></Footer>
   </div>
 </template>
+
+<script>
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+
+export default {
+  name: "App",
+  components: {
+    Header,
+    Footer,
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -28,5 +41,11 @@
       color: #42b983;
     }
   }
+}
+
+.container {
+  width: 100%;
+  height: 80%;
+  background-color: #ccc;
 }
 </style>
